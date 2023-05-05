@@ -7,16 +7,12 @@ body {
     text-align: center;
     font-family: 'Inter', sans-serif;
     background: #FFFFFF;
+    line-height: 12px;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    /* align-items: flex-start; */
-    /* padding: 0px;
-    gap: 0px;
-    text-align: center; */
-
     position: relative;
     width: 570px;
     height: 470px;
@@ -34,8 +30,6 @@ footer {
     background-color: #F5F5F5;
     align-content: center;
 
-    /* color: #222222; */
-
 }
 
 footer p {
@@ -48,8 +42,8 @@ footer p {
     color: #222222;
 }
 
-img{
-    width: 200px ;
+img {
+    width: 200px;
     height: 68px;
 }
 
@@ -61,13 +55,14 @@ img{
     padding-top: 190px;
     gap: 20px;
 
+
 }
 
 .header h1 {
     font-style: normal;
     font-weight: 700;
     font-size: 50px;
-    line-height: 61px;
+    line-height: 5px;
     text-align: center;
     color: #333333;
 }
@@ -92,8 +87,9 @@ img{
     gap: 8px;
 }
 
-.container form p {
+.container form i {
     align-self: self-start;
+    margin-right: 5px;
     color: #C62828;
     font-weight: 500;
     font-size: 14px;
@@ -112,6 +108,7 @@ img{
 }
 
 .container form label {
+
     align-self: flex-start;
     display: block;
     margin-bottom: 8px;
@@ -123,9 +120,9 @@ img{
     color: #333333;
 }
 
-.buttons{
+.buttons {
     margin-top: 40px;
-  
+
 }
 
 .submit {
@@ -174,11 +171,14 @@ img{
     color: #FF0000;
 
 }
-.switcher{
+
+/* Helper */
+
+.switcher {
     display: flex;
-  align-items: flex-start;
-  margin-top: 15px;
-  margin-right: 5px;
+    align-items: flex-start;
+    margin-top: 15px;
+    margin-right: 5px;
 }
 
 .switch {
@@ -203,8 +203,67 @@ img{
     flex-grow: 1;
 }
 
-@media only screen and (min-widhth: 1440px) {}
+.container .helper b{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
 
-@media only screen and (min-widhth: 744px) {}
+/* 
+Responsive desine has a bug that needs to be fixed. Only big screen works fine */
 
-@media only screen and (min-widhth: 375px) {}
+/* @media only screen and (max-widhth: 1440px) {
+     .container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 570px;
+        height: 470px;
+        left: calc(50% - 570px/2);
+        top: calc(50% - 470px/2 - 90px);
+    }
+    form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    }
+} */
+
+@media only screen and (max-width: 744px) {
+    .container {
+        position: absolute;
+        width: 646px;
+        height: 515px;
+        left: calc(50% - 646px/2 + 1px);
+        top: calc(50% - 515px/2 - 86.5px);
+    }
+
+    form {
+        flex: none;
+        order: 1;
+        align-self: stretch;
+        flex-grow: 0;
+    }
+
+}
+
+@media only screen and (max-width: 375px) {
+    .container {
+        position: absolute;
+        width: 335px;
+        height: 481px;
+        left: calc(50% - 335px/2);
+        top: calc(50% - 481px/2 - 34.5px);
+    }
+
+    form {
+        flex: none;
+        order: 0;
+        align-self: stretch;
+        flex-grow: 0;
+    }
+}
